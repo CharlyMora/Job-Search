@@ -8,8 +8,8 @@ public class CLIArguments {
     @Parameter(
             required = true,
             descriptionKey = "KEYWORD",
-            description = "KEYWORD")
-            //validateWith = CLIKeywordValidator.class)
+            description = "KEYWORD",
+            validateWith = CLIKeyWordValidator.class)
     private String keyword;
 
     @Parameter(
