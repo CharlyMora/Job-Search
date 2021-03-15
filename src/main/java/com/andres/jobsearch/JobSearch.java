@@ -5,6 +5,7 @@ import com.beust.jcommander.JCommander;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Optional;
 import java.util.stream.Stream;
 
 import static com.andres.jobsearch.CommanderFunctions.buildCommanderWithName;
@@ -16,6 +17,13 @@ public class JobSearch {
         JCommander jCommander= buildCommanderWithName("job-search", CLIArguments::newInstance);
         Stream<CLIArguments> stramOfCLI =
                 parseArguments(jCommander, args, JCommander::usage)
-                .orElse(Collections.emptyList());
+                .orElse(Collections.emptyList())
+                .stream()
+                .map(obj -> (CLIArguments) obj);
+
+        Optional<CLIArguments> cliArgumentsOptional =
+                stramOfCLI.filter(cli->!cli.isHelp())
+                .filter(cli -> cli.getKeyword() != null)
+                .findFirst();
     }
 }

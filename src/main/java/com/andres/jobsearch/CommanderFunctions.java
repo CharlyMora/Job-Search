@@ -20,5 +20,7 @@ public class CommanderFunctions {
             JCommander jCommander,
             String[] arguments,
             Consumer<JCommander> onError
-    ){}
+    ){
+        jCommander.parse(arguments);
+    }
 }
