@@ -9,13 +9,13 @@ public class CLIFunctions {
 
         params.put("description", cliArguments.getKeyword());
         params.put("location", cliArguments.getLocation());
-        params.put("full_time", cliArguments.isFullTime();
+        params.put("full_time", cliArguments.isFullTime());
         params.put("page", cliArguments.getPage());
 
         if(cliArguments.isMarkdown()){
-            params.put("markdown", true)
+            params.put("markdown", true);
         }
 
-        return params
+        return params;
     }
 }

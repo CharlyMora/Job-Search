@@ -2,6 +2,7 @@ package com.andres.jobsearch;
 
 import com.andres.jobsearch.api.APIJobs;
 import com.andres.jobsearch.cli.CLIArguments;
+import com.andres.jobsearch.cli.CLIFunctions;
 import com.beust.jcommander.JCommander;
 
 import java.util.Collection;
